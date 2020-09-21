@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello,vue.js</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- ページ遷移はrouter-linkコンポーネントを使用-->
+    <router-link to="/top">Go to Top</router-link>
+    <!-- ②URLパラメーターを利用する（URLパラメータ123を渡す） -->
+    <!-- <router-link to="/users/123">Go to User</router-link> -->
+    <!--  ❷名前付きのルート -->
+    <router-link :to="{name: 'user',params: {userID: 123}}">Go to User</router-link>
+    <!-- router-viewの中にTopとUserが表示される -->
+    <router-view></router-view>
+    
+
+  </div>
+  <script src="https://unpkg.com/vue@2.6.10"></script>
+  <script src="https://unpkg.com/vue-router@3.0.6"></script>
+  <script src="js/main.js"></script> 
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> -->
+</body>
+</html>
